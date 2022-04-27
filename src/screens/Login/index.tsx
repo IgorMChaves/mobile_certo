@@ -4,6 +4,7 @@ import {
   Text,
   KeyboardAvoidingView,
   TextInput,
+  ImageBackground,
 } from "react-native";
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import Button from "../../components/Button";
@@ -20,6 +21,10 @@ export default function Login({ navigation }: LoginTypes) {
 
   return (
     <View style={styles.container}>
+       <ImageBackground
+        source={require("../../assets/Vector.png")}
+        style={styles.background}
+      >t6
         <KeyboardAvoidingView>
           <Text style={styles.title}>Login</Text>
           <View style={styles.formRow}>
@@ -43,6 +48,7 @@ export default function Login({ navigation }: LoginTypes) {
           <Button title="Login" type="black" onPress={handleSignIn} />
           <Button title="Cadastre-se" type="grey" onPress={handleCadastrar} />
         </KeyboardAvoidingView>
+        </ImageBackground>
     </View>
   );
 }

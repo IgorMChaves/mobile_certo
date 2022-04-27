@@ -15,7 +15,7 @@ export default function Perfil({ navigation }: LoginTypes) {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
-        <Image source={require("../../assets/Igor.png")} />
+        <Image source={require("../../assets/Isa.png")} />
       </View>
       <Text style={styles.title}>N O M E</Text>
       <View style={styles.input}>
