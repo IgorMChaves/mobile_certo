@@ -12,6 +12,16 @@ const styles = StyleSheet.create({
   image: {
     padding: 5
   },
+
+  local: {
+    margin: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.black,
+    backgroundColor: colors.white,
+    borderRadius: 5,
+  },
   title: {
     padding: 5,
     fontSize: 30,
@@ -25,6 +35,9 @@ const styles = StyleSheet.create({
     padding: 5,
     width: "80%"
   }
+
+
+
 })
 
 export default styles
