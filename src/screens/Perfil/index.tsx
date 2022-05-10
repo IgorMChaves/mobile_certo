@@ -3,13 +3,8 @@ import { View, Text, Image } from "react-native";
 import styles from "./styles";
 import Button from "../../components/Button";
 import { LoginTypes } from "../../types/Screen.types";
-import { MaterialIcons, Entypo } from "@expo/vector-icons";
 
-import {
- 
-  TextInput,
-  
-} from "react-native";
+
 
 export default function Perfil({ navigation }: LoginTypes) {
   async function handleSignIn() {
@@ -22,31 +17,15 @@ export default function Perfil({ navigation }: LoginTypes) {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
-        <Image source={require("../../assets/Isa.png")} />
+        <Image source={require("../../assets/Igor.png")} />
       </View>
-
-      <View style={styles.local}>
-            <MaterialIcons name="email" style={styles.icon} />
-            <TextInput
-              style={styles.input}
-              placeholder="localização"
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-          </View>
-
-
- 
-
-
-
-
-
-      <Text style={styles.title}>NOME</Text>
+      <Text style={styles.title}>N O M E</Text>
       <View style={styles.input}>
-        <Button title="DADOS" type="black" onPress={handleSignIn} />
-        <Button title="PUBLICAR" type="black" onPress={handleSignIn} />
-        <Button title="VOLTAR" type="grey" onPress={handleLogin} />  
+        <Button  title="MEUS PEDIDOS" type="black" onPress={handleSignIn} />
+        <Button title="ENDEREÇO" type="black" onPress={handleSignIn} />
+        <Button title="PAGAMENTO" type="black" onPress={handleSignIn} />
+        <Button title="CONFIGURAÇÕES" type="black" onPress={handleSignIn} />
+        <Button title="SAIR" type="grey" onPress={handleLogin} />  
       </View>     
     </View>
   );

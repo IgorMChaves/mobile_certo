@@ -8,12 +8,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-  background: {
-    height: 306,
-    width: 355    
-  },
-  
   title: {
     fontSize: 30,
     fontWeight: 'bold',
