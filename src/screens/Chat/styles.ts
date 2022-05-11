@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.lightGrey,
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     padding: 5,
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     width: "80%"
   },
   button: {
-   marginLeft: 40  
-  }
+   flexDirection: 'column'
+  },
 })
 
 export default styles

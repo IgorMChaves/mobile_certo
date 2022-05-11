@@ -22,13 +22,12 @@ export default function Perfil({ navigation }: LoginTypes) {
           <FontAwesome5 name="search" style={styles.icon} />
           <TextInput placeholder="  Pesquisar" />
         </View>
-        <Text style={styles.title}>DESCUBRA</Text>
+        <Text style={styles.title}>D E S C U B R A</Text>
         <View style={styles.button}>
           <Buttonlancamentos  title="LANÇAMENTOS" type="black" onPress={handleSignIn} />
           <Buttonvendas title="PRÉ-VENDA" type="black" onPress={handleSignIn} />
           <Buttonvendidos title="+VENDIDOS" type="black" onPress={handleSignIn} />  
         </View>
-
     </View>      
     );
 }

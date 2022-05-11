@@ -3,11 +3,24 @@ import colors from "../../styles/colors";
 
 const styles = StyleSheet.create({
   card: {
-    alignItems: 'center',
+    backgroundColor: colors.grey,
+    borderRadius: 10,
+    margin: 10,
+    width: "90%",
+    alignItems: "center",
   },
-  image: {
-    flexDirection: 'column',
+  msg: {
+    textAlign: "left",
+  },
+  topicos: {
+    flexDirection: "row",
+  },
+  topic: {
+    backgroundColor: colors.black,
+    margin: 5,
+    borderRadius: 5,
+    padding: 5,
   }
 })
 
-export default styles
+export default styles;
