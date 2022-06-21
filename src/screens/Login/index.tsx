@@ -59,9 +59,10 @@ export default function Login({ navigation }: LoginTypes) {
             <MaterialIcons name="email" style={styles.icon} />
             <TextInput
               style={styles.input}
-              placeholder="Email"
+              placeholder="E-mail"
               keyboardType="email-address"
               autoCapitalize="none"
+              onChangeText={(i) => handleChange({ email: i })}
             />
           </View>
           <View style={styles.formRow}>
@@ -71,6 +72,7 @@ export default function Login({ navigation }: LoginTypes) {
               placeholder="Senha"
               secureTextEntry={true}
               autoCapitalize="none"
+              onChangeText={(i) => handleChange({ password: i })}
             />
           </View>
           <Button title="Login" type="black" onPress={handleSignIn} />
