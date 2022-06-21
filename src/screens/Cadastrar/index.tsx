@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
-  KeyboardAvoidingView,
   TextInput,
+  KeyboardAvoidingView,
   Alert,
 } from "react-native";
 import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
-import Button from "../../components/Button";
-import { ButtonComp, LoadingComp } from "../../components";
+import { Button, LoadingComp } from "../../components";
 import styles from "./styles";
 import { useAuth } from "../../hook/auth";
 import { IRegister } from "../../interfaces/User.interface";
@@ -35,36 +34,31 @@ export default function Cadastrar({ navigation }: LoginTypes) {
         Alert.alert("Preencha todos os campos!!!");
       }
     } catch (error) {
-        const err = error as AxiosError;
-        const data = err.response?.data as IResponse;
-        let message = "";
-        if (data.data) {
-          for (const [key, value] of Object.entries(data.data)) {
-            message = `${message} ${value}`;
-          }
+      const err = error as AxiosError;
+      const data = err.response?.data as IResponse;
+      let message = "";
+      if (data.data) {
+        for (const [key, value] of Object.entries(data.data)) {
+          message = `${message} ${value}`;
         }
-        Alert.alert(`${data.message} ${message}`);
-      } finally {
+      }
+      Alert.alert(`${data.message} ${message}`);
+    } finally {
       setIsLoading(false);
     }
   }
-
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 500);
   }, []);
-  
-
+      
   return (
     <>
       {isLoading ? (
         <LoadingComp />
       ) : (
         <View style={styles.container}>
-          source={require("../../assets/fundo.png")}
-          style={styles.container}
-        >
           <KeyboardAvoidingView>
             <Text style={styles.title}>Cadastre-se</Text>
             <View style={styles.formRow}>
@@ -78,11 +72,11 @@ export default function Cadastrar({ navigation }: LoginTypes) {
             <View style={styles.formRow}>
               <MaterialIcons name="email" style={styles.icon} />
               <TextInput
-                style={styles.input}
-                placeholder="E-mail"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                onChangeText={(i) => handleChange({ email: i })}
+                  style={styles.input}
+                  placeholder="E-mail"
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  onChangeText={(i) => handleChange({ email: i })}
               />
             </View>
             <View style={styles.formRow}>
@@ -93,17 +87,17 @@ export default function Cadastrar({ navigation }: LoginTypes) {
                 secureTextEntry={true}
                 autoCapitalize="none"
                 onChangeText={(i) => handleChange({ password: i })}
-              />
+                />
             </View>
-            <ButtonComp
+            <Button
               title="Salvar"
               type="grey"
               onPress={handleRegister}
             />
-            <ButtonComp title="Voltar" type="black" onPress={handleLogin} />
+            <Button title="Voltar" type="black" onPress={handleLogin} />
           </KeyboardAvoidingView>
         </View>
-      )}
-    </>
-  );
+    )}
+ </>
+ );
 }

@@ -3,10 +3,11 @@ import { View, Text, Image } from "react-native";
 import styles from "./styles";
 import Button from "../../components/Button";
 import { LoginTypes } from "../../types/Screen.types";
-
+import { useAuth } from "../../hook/auth";
 
 
 export default function Perfil({ navigation }: LoginTypes) {
+  const { user } = useAuth();
   async function handleSignIn() {
     console.log("Cadastrar");
   }
@@ -20,9 +21,9 @@ export default function Perfil({ navigation }: LoginTypes) {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
-        <Image source={require("../../assets/Igor.png")} />
+        <Image source={{ uri: user?.profile_photo_url }} style={styles.img} />
+        <Text style={styles.title}>{user?.name}</Text>
       </View>
-      <Text style={styles.title}>N O M E</Text>
       <View style={styles.input}>
         <Button  title="MEUS PEDIDOS" type="black" onPress={handleSignIn} />
         <Button title="ENDEREÇO" type="black" onPress={handleMap} />
