@@ -19,37 +19,38 @@ export default function Login({ navigation }: LoginTypes) {
   const [data, setData] = useState<IAuthenticate>();
   const [isLoading, setIsLoading] = useState(true);
   function handleCadastrar() {
-    navigation.navigate("Cadastrar");
-  }
-  function handleChange(item: IAuthenticate) {
-    setData({ ...data, ...item });
-  }
+  navigation.navigate("Cadastrar");
+}
+  
+function handleChange(item: IAuthenticate) {
+  setData({ ...data, ...item });
+}
   async function handleSignIn() {
-  try {
-    setIsLoading(true);
-    if (data?.email && data.password) {
-      await signIn(data);
-    } else {
-      Alert.alert("Preencha todos os campos!!!");
-    setIsLoading(false);
-    }
-  } catch (error) {
-    const err = error as AxiosError;
-    const data = err.response?.data as IUser;
-    let message = "";
-    if (data.data) {
-      for (const [key, value] of Object.entries(data.data)) {
-        message = `${message} ${value}`;
+    try {
+      setIsLoading(true);
+      if (data?.email && data.password) {
+        await signIn(data);
+      } else {
+        Alert.alert("Preencha todos os campos!!!");
+        setIsLoading(false);
       }
-    }
-    Alert.alert(`${data.message} ${message}`);
+      } catch (error) {
+        const err = error as AxiosError;
+        const data = err.response?.data as IUser;
+        let message = "";
+        if (data.data) {
+          for (const [key, value] of Object.entries(data.data)) {
+            message = `${message} ${value}`;
+          }
+        }
+        Alert.alert(`${data.message} ${message}`);
+        setIsLoading(false);
+      }
+  }
+
+  useEffect(() => {
     setIsLoading(false);
- }
- }
- 
- useEffect(() => {
-  setIsLoading(false);
- }, []);
+  }, []);
 
   return (
     <View style={styles.container}>

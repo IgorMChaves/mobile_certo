@@ -18,6 +18,33 @@ const styles = StyleSheet.create({
       width: Dimensions.get("window").width,
       height: Dimensions.get("window").height,
   },
+  posicao: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: 0,
+    width: "100%"
+  },
+  google: {
+    width: Dimensions.get("window").width,
+  },
+  rowSearch: {
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    backgroundColor: colors.black,
+    borderRadius: 10,
+    margin: 10,
+    alignItems: "center",
+    width: "99%",
+    height: 65,
+  },
+  input: {
+    width: "76%"
+  },
+  icon: {
+    fontSize: 24,
+    padding: 5
+  },
 })
 
 export default styles

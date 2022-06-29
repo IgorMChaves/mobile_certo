@@ -9,6 +9,7 @@ import { useAuth } from "../../hook/auth";
 export default function Perfil({ navigation }: LoginTypes) {
   const { user } = useAuth();
   async function handleSignIn() {
+    navigation.navigate("Login");
     console.log("Cadastrar");
   }
   function handleLogin() {
@@ -17,7 +18,7 @@ export default function Perfil({ navigation }: LoginTypes) {
   function handleMap() {
     navigation.navigate("Map");
   }
-
+  
   return (
     <View style={styles.container}>
       <View style={styles.image}>
