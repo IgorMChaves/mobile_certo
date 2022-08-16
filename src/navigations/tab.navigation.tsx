@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, SairScreen, MapScreen, QrCOdeScreen} from "../screens";
-import { Ionicons } from "@expo/vector-icons";
+import { ChatScreen, PerfilScreen, SairScreen, MapScreen, QrCOdeScreen, CameraScreen, ArquivoScreen} from "../screens";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -50,6 +50,24 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="qr-code-outline" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="camera" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name="folder-open" size={24} color={colors.white} />
           ),
         }}
       />
