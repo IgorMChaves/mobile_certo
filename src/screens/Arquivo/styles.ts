@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     textClose: {
         color: colors.white,
-        fontsize: 20,
+        fontSize: 20,
     },
     collumnPreviewVisible: {
         flex: 1,

@@ -63,8 +63,8 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="Camera"
-        component={CameraScreen}
+        name="Arquivo"
+        component={ArquivoScreen}
         options={{
           tabBarIcon: () => (
             <FontAwesome name="folder-open" size={24} color={colors.white} />
