@@ -34,20 +34,22 @@ export default function App() {
         setCapturedImage(photo);
     };
     const __savePhoto = async () => {
-        const permission = await MediaLibrary.requestPermissionsAsync();
+        const permission = await MediaLibrary.requestPermissionsAsync()
         if (permission.granted) {
             try {
-                const asset = await MediaLibrary.createAssetAsync(capturedImage.uri);
+                const asset = await MediaLibrary.createAssetAsync(capturedImage.uri)
                 MediaLibrary.createAlbumAsync("Images", asset, false)
                     .then(() => {
-                        Alert.alert("imagem salva com sucesso");
+                        Alert.alert("Imagem salva com sucesso!")
                     })
                     .catch(() => {
-                        Alert.alert("Erro ao salvar");
+                        Alert.alert("Erro ao salvar a imagem!")
                     })
             } catch (error) {
-                Alert.alert("sem permissões para acessar os arquivos");
+                Alert.alert(String(error))
             }
+        } else {
+            Alert.alert("Sem permissão para acessar os arquivos")
         }
     };
     return (
@@ -77,10 +79,10 @@ export default function App() {
                                         <Text style={styles.textPreviewVisible}> Nova foto </Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity
-                                        onPress={() => setPreviewVisible(false)}
-                                        style={styles.buttonPreviewVisible}
+                                        onPress={__savePhoto}
+                                        style={styles.buttonSavePhoto}
                                     >
-                                        <Text style={styles.textPreviewVisible}> salva a foto  </Text>
+                                        <Text style={styles.textPreviewVisible}> Salvar a foto  </Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

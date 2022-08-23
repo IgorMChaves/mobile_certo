@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
   },
   buttonGrey: {
     backgroundColor: colors.grey,
-    borderRadius: 15,
-    margin: 40
+    borderRadius: 5,
+    margin: 10
   },
   text: {
     color: colors.white,

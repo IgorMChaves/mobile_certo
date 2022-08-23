@@ -69,7 +69,7 @@ export default function ImagePickerExample () {
                         onPress={() => pickImage()}
                         style={styles.buttonStartOver}
                     >
-                        <Text style={styles.textStartOver}>Abrir arquivo</Text>  
+                        <Text style={styles.textStartOver}>         Abrir arquivo</Text>  
                     </TouchableOpacity>
                 </View>
             )}

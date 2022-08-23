@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     buttonFlip: {
         position: "absolute",
         top: "5%",
-        right: "5%",
+        right: "10%",
     },
     textFlip: {
         fontSize: 18,
