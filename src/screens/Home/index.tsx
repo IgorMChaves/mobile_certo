@@ -53,6 +53,9 @@ export default function Chat({ navigation }: ChatTypes) {
                   keyExtractor={(item) => item.id}
                 />
               )}
+              <TouchableOpacity style={styles.button} onPress={handleChat}>
+                <Text style={styles.buttonText}>+</Text>
+              </TouchableOpacity>
             </SafeAreaView>
           </ImageBackground>
         )}

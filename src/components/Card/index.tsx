@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, Image} from "react-native";
 import {IMensagemState} from "../../interfaces/Mensagem.interface";
-import { CardProps } from "../../interfaces/Card.interface";
 import styles from "./styles";
 import {format} from "date-fns"
 
