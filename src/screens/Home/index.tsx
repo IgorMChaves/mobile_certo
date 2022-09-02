@@ -37,10 +37,6 @@ export default function Chat({ navigation }: ChatTypes) {
       {isLoading ? (
         <LoadingComp />
       ) : (
-          <ImageBackground
-            source={require("../../assets/fundo.png")}
-            style={styles.container}
-          >
             <SafeAreaView style={styles.container}>
               <View style={styles.rowSearch}>
                 <FontAwesome5 name="search" style={styles.icon} />
@@ -57,7 +53,6 @@ export default function Chat({ navigation }: ChatTypes) {
                 <Text style={styles.buttonText}>+</Text>
               </TouchableOpacity>
             </SafeAreaView>
-          </ImageBackground>
         )}
     </>
   );
