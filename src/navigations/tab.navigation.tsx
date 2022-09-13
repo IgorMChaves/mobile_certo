@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, SairScreen, MapScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen} from "../screens";
+import { ChatScreen, PerfilScreen, SairScreen, MapScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen, VideoAudioScreen} from "../screens";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
@@ -68,6 +68,15 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <FontAwesome name="folder-open" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="AudioVideo"
+        component={VideoAudioScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name="video-camera" size={24} color="white" />           
           ),
         }}
       />
