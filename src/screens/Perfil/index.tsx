@@ -1,23 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { View, Text, Image } from "react-native";
 import styles from "./styles";
 import Button from "../../components/Button";
 import { LoginTypes } from "../../types/Screen.types";
 import { useAuth } from "../../hook/auth";
+import * as Notifications from "expo-notifications";
+import { registerForPushNotificationsAsync} from "../../services/data/Push";
 
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+});
 
-export default function Perfil({ navigation }: LoginTypes) {
+export default function Perfil() {
   const { user } = useAuth();
-  async function handleSignIn() {
-    navigation.navigate("Login");
-    console.log("Cadastrar");
-  }
-  function handleLogin() {
-    navigation.navigate("Login");
-  }
-  function handleMap() {
-    navigation.navigate("Map");
-  }
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (user&& user.profile_photo_url) {
+      setIsLoading(false);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    async function fetchToken() {
+      const token = await registerForPushNotificationsAsync()
+      console.log(token)
+    }
+    fetchToken()
+  }, []);
   
   return (
     <View style={styles.container}>
@@ -26,11 +40,6 @@ export default function Perfil({ navigation }: LoginTypes) {
         <Text style={styles.title}>{user?.name}</Text>
       </View>
       <View style={styles.input}>
-        <Button  title="MEUS PEDIDOS" type="black" onPress={handleSignIn} />
-        <Button title="ENDEREÇO" type="black" onPress={handleMap} />
-        <Button title="PAGAMENTO" type="black" onPress={handleSignIn} />
-        <Button title="CONFIGURAÇÕES" type="black" onPress={handleSignIn} />
-        <Button title="SAIR" type="grey" onPress={handleLogin} />  
       </View>     
     </View>
   );
