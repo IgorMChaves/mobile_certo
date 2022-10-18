@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, SairScreen, MapScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen, VideoAudioScreen} from "../screens";
+import { ChatScreen, PerfilScreen, SairScreen, MapScreen, AcelerometroScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen, VideoAudioScreen} from "../screens";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
@@ -23,15 +23,6 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="person" size={24} color={colors.white} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={ChatScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="home" size={24} color={colors.white} />
           ),
         }}
       />
@@ -77,6 +68,15 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <FontAwesome name="video-camera" size={24} color="white" />           
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Acelerometro"
+        component={AcelerometroScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="game-controller" size={24} color="white" />
           ),
         }}
       />
