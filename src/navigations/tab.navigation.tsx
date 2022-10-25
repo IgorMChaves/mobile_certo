@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ChatScreen, PerfilScreen, SairScreen, MapScreen, AcelerometroScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen, VideoAudioScreen} from "../screens";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import { ChatScreen, PedometroScreen, PerfilScreen, SairScreen, MapScreen, AcelerometroScreen, QrCOdeScreen, CameraScreen, ArquivoScreen, HomeScreen, VideoAudioScreen} from "../screens";
+import { Ionicons, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -77,6 +77,15 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="game-controller" size={24} color="white" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Pedometro"
+        component={PedometroScreen}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome5 name="shoe-prints" size={24} color="white" />
           ),
         }}
       />
